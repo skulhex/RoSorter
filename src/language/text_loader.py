@@ -1,4 +1,4 @@
-from translates import LANGUAGE
+from src.language.translates import LANGUAGE
 
 from pathlib import Path
 from datetime import datetime

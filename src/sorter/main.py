@@ -1,7 +1,7 @@
-from sorter.applyes import Applyes
-from sorter.copy import Copy
-from sorter.options_validate import optionsValidate
-from sorter.sort import Sort
+from src.sorter.applyes import Applyes
+from src.sorter.copy import Copy
+from src.sorter.options_validate import optionsValidate
+from src.sorter.sort import Sort
 
 from src.language.text_loader import TextLoader
 import os

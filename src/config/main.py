@@ -1,5 +1,5 @@
-from config.config import ValidateFileConfig
-from config.validates import ConfigOptionValidate
+from src.config.config import ValidateFileConfig
+from src.config.validates import ConfigOptionValidate
 
 from src.language.text_loader import TextLoader
 
