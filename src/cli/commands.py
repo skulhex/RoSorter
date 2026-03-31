@@ -1,24 +1,4 @@
-import argparse
-from config import Config
-from sorter import Sorter
-from languages import Language
-
-class Cli:
-    def sort(self, args):
-        lang = Language('commands')
-        self.code_return = lang.code_return
-
-        conf = Config('en-US', custom_config=args.config) if args.config else Config()
-        catalogs, settings, language = conf.run()
-        sort = Sorter(catalogs, settings, language)
-        sort.main('nt')
-
-    def gui(self, args):
-        print('Under Construction')
-
-    def create(self, args):
-        print('Under Construction')
-
+class CliCommands:
     def commands(self):
         command = self.parser
         subparser = command.add_subparsers(
@@ -38,9 +18,3 @@ class Cli:
 
         args = command.parse_args()
         args.func(args)
-
-    def main(self):
-        self.parser = argparse.ArgumentParser(
-            description=self.code_return('help')
-        )
-        self.commands()

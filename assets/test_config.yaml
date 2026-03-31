@@ -8,7 +8,7 @@ settings:
 
 directories: # Указание всех директории
   downloads: # Название каталога
-    path: 'C:\Users\sophrosha\Downloads' # Путь
+    path: 'C:\Users\sophrosha\Download' # Путь
     files: ["png", "jpg", "pdf", "directory", "exe", "torrent", "zip", "rar"] # То что парсим
     names: # Указываем каталоги(обязательно)
     # - расширение:каталог

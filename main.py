@@ -1,14 +1,4 @@
-from src.cli import Cli
-
-class Daemon:
-    def __init__(self): 
-        pass
-
-
-import pystray
-class Tray:
-    def __init__(self): 
-        pass
+from src.cli.main import Cli
 
 def main():
     general = Cli()

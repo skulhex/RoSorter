@@ -58,25 +58,3 @@ LANGUAGE = {
         'succes_sorting': '[RoSorter] : Successfully sorted {}!'
     }
 }
-
-class Language:
-    def __init__(self, language='en-US'):
-        self.language = language
-
-    def printf(self, code_name, *args):
-        try:
-            if args:
-                print(LANGUAGE[self.language][code_name].format(*args))
-            else:
-                print(LANGUAGE[self.language][code_name])
-        except KeyError:
-            print(LANGUAGE['other_messages']['another_language'])
-    
-    def inputf(self, code_name):
-        try:
-            input(LANGUAGE[self.language][code_name])
-        except KeyError:
-            print(LANGUAGE['other_messages']['another_language'])
-
-    def code_return(self, code_name):
-        return LANGUAGE[self.language][code_name]
