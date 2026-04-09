@@ -1,7 +1,5 @@
-from src.language.translates import LANGUAGE
+from utility.src.language.translates import LANGUAGE
 
-from pathlib import Path
-from datetime import datetime
 
 class TextLoader:
     def __init__(self, language='en-US', logging=False):

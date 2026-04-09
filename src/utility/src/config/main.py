@@ -1,7 +1,7 @@
-from src.config.config import ValidateFileConfig
-from src.config.validates import ConfigOptionValidate
+from utility.src.config.config import ValidateFileConfig
+from utility.src.config.validates import ConfigOptionValidate
 
-from src.language.text_loader import TextLoader
+from utility.src.language.text_loader import TextLoader
 
 import yaml
 import os
