@@ -48,7 +48,7 @@ jobs:
           name: "Dev Build #${{ github.run_id }}"
           draft: false
           prerelease: true
-          generate_release_notes: true
+          generate_release_notes: false
           files: |
             packaging/RoSorter-Installer.exe
         env:
