@@ -21,9 +21,5 @@ class CliCommands:
         gui_command = subparser.add_parser('gui', help=self.code_return('gui'))
         gui_command.set_defaults(func=self.gui)
 
-        create_command = subparser.add_parser('create', help=self.code_return('create'))
-        create_command.add_argument('--config', help=self.code_return('another_config'))
-        create_command.set_defaults(func=self.create)
-
         args = command.parse_args()
         args.func(args)

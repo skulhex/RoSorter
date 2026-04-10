@@ -1,11 +1,9 @@
-from src.config.config import ValidateFileConfig
-from src.config.validates import ConfigOptionValidate
+from utility.src.config.config import ValidateFileConfig
+from utility.src.config.validates import ConfigOptionValidate
 
-from src.language.text_loader import TextLoader
+from utility.src.language.text_loader import TextLoader
 
 import yaml
-import os
-from pathlib import Path
 
 class Config(ValidateFileConfig, ConfigOptionValidate):
     def __init__(self, language, custom_config=None):
@@ -15,22 +13,12 @@ class Config(ValidateFileConfig, ConfigOptionValidate):
         self.inputf = lang.inputf
 
         self.custom_config = custom_config
-        if os.name == 'nt':
-            self.username = os.environ.get('USERNAME')
-            self.home_path = Path(f"C:/Users/{self.username}")
-            self.sys_path = Path("C:/Program Files")
-
-            #self.filepath = self.home_path / "AppData/Roaming/rosorter.yaml"
-            self.filepath = self.home_path / "Documents/Projects/RoSorter-1/assets/test_config.yaml" if self.custom_config is None else self.custom_config
-            #self.example_config = self.sys_path / "RoSorter/src/example.yaml"
-            self.example_config = self.home_path / "Documents/Projects/RoSorter-1/assets/test_config.yaml"
-        else:
-            pass
+        self.setup_paths(custom_config)
 
     def main(self):
         catalogs = {}
         settings = {}
-        with open(self.filepath, 'r', encoding='utf-8') as f:
+        with open(self.configuration, 'r', encoding='utf-8') as f:
             config = yaml.safe_load(f)
 
             self.contains_values(config)

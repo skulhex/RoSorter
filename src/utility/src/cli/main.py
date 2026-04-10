@@ -1,7 +1,7 @@
-from src.language.text_loader import TextLoader
+from utility.src.language.text_loader import TextLoader
 
-from src.cli.commands import CliCommands
-from src.cli.handlers import CliHandlers
+from utility.src.cli.commands import CliCommands
+from utility.src.cli.handlers import CliHandlers
 
 import argparse
 

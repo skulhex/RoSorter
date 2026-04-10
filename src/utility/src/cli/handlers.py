@@ -1,5 +1,5 @@
-from src.sorter.main import Sorter
-from src.config.main import Config
+from utility.src.sorter.main import Sorter
+from utility.src.config.main import Config
 
 class CliHandlers:
     @staticmethod
@@ -11,12 +11,8 @@ class CliHandlers:
             pass
 
         sort = Sorter(catalogs, settings, language)
-        sort.main('nt')
+        sort.main()
 
     @staticmethod
-    def gui():
-        print('Under Construction')
-
-    @staticmethod
-    def create():
+    def gui(args):
         print('Under Construction')
