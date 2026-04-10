@@ -17,15 +17,13 @@ class Sorter(Applies, Copy, OptionsValidate, Sort):
         self.settings = settings
 
     # Основная функция
-    def main(self, system):
-        if system == "nt":
-            catalog_bar = tqdm(self.catalogs, position=1)
-            for catalog in catalog_bar:
-                catalog_bar.set_description(self.code_return('moving_catalog', catalog))
-                path_file, files, ignore, names = self.validate_options(catalog)
-                content_folder = [os.path.splitext(n) for n in os.listdir(path_file)]
-                content_folder = self.apply_ignore(ignore, content_folder, catalog)
-                content_folder = self.apply_names(names, content_folder)
-                self.sort(content_folder, path_file, files, names)
-        else:
-            pass
+    def main(self):
+        catalog_bar = tqdm(self.catalogs, position=1)
+        for catalog in catalog_bar:
+            catalog_bar.set_description(self.code_return('moving_catalog', catalog))
+            path_file, files, ignore, names = self.validate_options(catalog)
+            content_folder = [os.path.splitext(n) for n in os.listdir(path_file)]
+            content_folder = self.apply_ignore(ignore, content_folder, catalog)
+            content_folder = self.apply_names(names, content_folder)
+            self.sort(content_folder, path_file, files, names)
+        print("\n")

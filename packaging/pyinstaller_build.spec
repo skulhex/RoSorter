@@ -20,8 +20,10 @@ pyz = PYZ(a.pure)
 exe = EXE(
     pyz,
     a.scripts,
+    a.binaries,
+    a.datas,
     [],
-    exclude_binaries=True,
+    exclude_binaries=False,
     name=PROJECT_NAME,
     debug=False,
     bootloader_ignore_signals=False,
@@ -34,6 +36,7 @@ exe = EXE(
     codesign_identity=None,
     entitlements_file=None,
     icon=[LOGO_PATH],
+    onefile=True,
 )
 coll = COLLECT(
     exe,

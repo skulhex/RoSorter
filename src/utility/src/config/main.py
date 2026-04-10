@@ -4,9 +4,6 @@ from utility.src.config.validates import ConfigOptionValidate
 from utility.src.language.text_loader import TextLoader
 
 import yaml
-import os
-import sys
-from pathlib import Path
 
 class Config(ValidateFileConfig, ConfigOptionValidate):
     def __init__(self, language, custom_config=None):
@@ -16,25 +13,12 @@ class Config(ValidateFileConfig, ConfigOptionValidate):
         self.inputf = lang.inputf
 
         self.custom_config = custom_config
-        if os.name == 'nt':
-            try:
-                self.app_path = Path(os.environ.get('APPDATA'))
-                self.configuration = self.app_path / "RoSorter" / "config.yaml"
-                if not self.custom_config:
-                    self.configuration = Path(self.custom_config)
-            except FileNotFoundError:
-                self.printf('file_exists')
-                sys.exit()
-            except NotADirectoryError:
-                self.printf('not_directory')
-                sys.exit()
-        else:
-            pass
+        self.setup_paths(custom_config)
 
     def main(self):
         catalogs = {}
         settings = {}
-        with open(self.filepath, 'r', encoding='utf-8') as f:
+        with open(self.configuration, 'r', encoding='utf-8') as f:
             config = yaml.safe_load(f)
 
             self.contains_values(config)

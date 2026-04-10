@@ -12,7 +12,7 @@
 - Создание демона для сортировки в определенное время
 - ~~Фикс ошибки копирования каталога на каталог~~ 
 - cli команда -> Разрабатывается
-- Поддержка Linux систем
+- ~~Поддержка Linux систем~~
 - ~~сборка программы~~
 
 > [!WARNING]
@@ -35,8 +35,17 @@ cd ../dist/RoSorter
 
 ## Установка
 ```
+# Windows
 git clone https://github.com/sophrosha/RoSorter
 cd RoSorter
 pip install -r requirements.txt
-python3 main.py
+# Или Releases -> RoSorter-Release.exe
+
+# Linux
+# Необходим pipx, установите его с помощью вашего пакетного менеджера.
+git clone https://github.com/sophrosha/RoSorter
+cd RoSorter
+pipx ensurepath
+chmod +x packaging/actions_build.sh
+./packaging/actions_build.sh
 ```

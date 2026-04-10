@@ -30,7 +30,7 @@ FunctionEnd
 Section "Install"
   SetOutPath "$INSTDIR"
 
-  File /r "${PROJECT_ROOT}\dist\RoSorter\*.*"
+  File /r "${PROJECT_ROOT}\dist\*.*"
 
   CreateDirectory "$SMPROGRAMS\RoSorter"
   CreateShortCut "$SMPROGRAMS\RoSorter\RoSorter.lnk" "$INSTDIR\RoSorter.exe"

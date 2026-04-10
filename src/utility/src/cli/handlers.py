@@ -11,8 +11,8 @@ class CliHandlers:
             pass
 
         sort = Sorter(catalogs, settings, language)
-        sort.main('nt')
+        sort.main()
 
     @staticmethod
-    def gui():
+    def gui(args):
         print('Under Construction')
