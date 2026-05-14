@@ -54,6 +54,20 @@ python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
 ```
 
+## Тестирование
+
+Тесты запускаются через `pytest` из активированного виртуального окружения:
+
+```bash
+pytest
+```
+
+Запуск отдельного файла с тестами:
+
+```bash
+pytest tests/test_sorter_copy.py
+```
+
 ## Сборка исполняемого файла
 ```bash
 git clone https://github.com/sophrosha/RoSorter
